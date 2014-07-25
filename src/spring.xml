@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="geometricShape"
+		class="com.mahder.spring.study.codingtointerfaces.GeometricShape" abstract="true">
+		<property name="x" value="10"></property>
+		<property name="y" value="20"></property>
+		<property name="geometricShapeName" value="Geometric Shape"></property>
+	</bean>
+	<bean id="point" class="com.mahder.spring.study.codingtointerfaces.Point"
+		parent="geometricShape">
+		<property name="geometricShapeName" value="Point"></property>
+	</bean>
+
+	<bean id="circle" class="com.mahder.spring.study.codingtointerfaces.Circle"
+		parent="point">
+		<property name="radius" value="40.4"></property>
+		<property name="geometricShapeName" value="Circle"></property>
+	</bean>
+
+	<bean id="cylindar" class="com.mahder.spring.study.codingtointerfaces.Cylindar"
+		parent="circle">
+		<property name="height" value="30.2"></property>
+		<property name="geometricShapeName" value="Cylindar"></property>
+	</bean>
+
+	<bean id="rectangle" class="com.mahder.spring.study.codingtointerfaces.Rectangle"
+		parent="geometricShape">
+		<property name="base" value="10"></property>
+		<property name="height" value="10"></property>
+		<property name="geometricShapeName" value="Rectangle"></property>
+	</bean>
+
+	<bean id="triangle" class="com.mahder.spring.study.codingtointerfaces.Triangle">
+		<property name="base" value="20"></property>
+		<property name="height" value="30"></property>
+		<property name="geometricShapeName" value="Triangle"></property>
+	</bean>
+
+</beans>
